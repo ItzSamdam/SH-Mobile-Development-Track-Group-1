@@ -34,6 +34,5 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
             : null,
       ),
     );
-    ;
   }
 }
