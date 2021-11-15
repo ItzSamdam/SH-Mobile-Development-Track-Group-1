@@ -32,12 +32,11 @@ class _LoginPageState extends State<LoginPage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Card(
-                    elevation: 5,
+                  const Center(
                     child: CircleAvatar(
-                      radius: 50,
                       backgroundImage:
-                          AssetImage('assets/images/telegram_logo.png'),
+                          AssetImage("assets/images/telegram_logo.png"),
+                      radius: 60.0,
                     ),
                   ),
                   const SizedBox(
@@ -56,19 +55,12 @@ class _LoginPageState extends State<LoginPage> {
                     height: 4,
                   ),
                   const SizedBox(
-                    height: 30,
-                  ),
-                  const Center(
-                    child:  CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/Adey.jpg"),
-                      radius: 60.0,
-
-                    ),
+                    height: 10,
                   ),
                 ],
               ),
               const SizedBox(
-                height: 48,
+                height: 10,
               ),
               Form(
                 child: Column(
