@@ -44,6 +44,16 @@ class _LoginPageState extends State<LoginPage> {
                     width: 99,
                     height: 4,
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const Center(
+                    child:  CircleAvatar(
+                      backgroundImage: AssetImage("assets/images/Adey.jpg"),
+                      radius: 60.0,
+
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(
