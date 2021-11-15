@@ -27,11 +27,22 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Card(
+                    elevation: 5,
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundImage:
+                          AssetImage('assets/images/telegram_logo.png'),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Text(
                     'Login',
                     style: heading2.copyWith(color: textBlack),
