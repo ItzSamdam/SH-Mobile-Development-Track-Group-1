@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:login_signup/theme.dart';
 
 class CustomCheckbox extends StatefulWidget {
+  const CustomCheckbox({Key? key}) : super(key: key);
+
   @override
   _CustomCheckboxState createState() => _CustomCheckboxState();
 }
