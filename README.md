@@ -4,13 +4,17 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Flutter Sign and Sgn Up Page.
+Group 1 Mobile Application Track 
+SideHustle Internship 4.0
+## GroupList
+<img src="Group List.png" alt="screenshot">
 
-A few resources to get you started if this is your first Flutter project:
+## Login Page
+<img src="Login_Page.png" alt="screenshot">
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Register Page
+<img src="Register_Page.png" alt="screenshot">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Issues from Group Members
