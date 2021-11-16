@@ -14,7 +14,7 @@ SideHustle Internship 4.0
 <img src="Login_Page.png" alt="screenshot">
 
 ## Register Page
-<img src="Register_Page.png" alt="screenshot">
+<img src="Register_page.png" alt="screenshot">
 
 
 ## Issues from Group Members
