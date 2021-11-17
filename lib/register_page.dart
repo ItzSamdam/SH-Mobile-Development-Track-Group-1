@@ -31,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: [                  
                   Text(
                     'Register',
                     style: heading2.copyWith(color: textBlack),
