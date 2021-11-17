@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                   const Center(
                     child: CircleAvatar(
                       backgroundImage:
-                          AssetImage("assets/images/telegram_logo.png"),
+                          AssetImage("assets/images/group1.jpg"),
                       radius: 60.0,
                     ),
                   ),
@@ -121,7 +121,20 @@ class _LoginPageState extends State<LoginPage> {
                     width: 12,
                   ),
                   Text('Remember me', style: regular16pt),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  const SizedBox(
+                    width: 60,
+                  ),
+                  Text('Forgot Password?', style: regular16pt),
                 ],
+                // children: [
+                  
+                // ],
               ),
               const SizedBox(
                 height: 32,
