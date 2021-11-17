@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-Flutter Sign and Sgn Up Page.
+Flutter Sign and Sign Up Page.
 Group 1 Mobile Application Track 
 SideHustle Internship 4.0
 ## GroupList
