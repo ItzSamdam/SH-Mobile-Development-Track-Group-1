@@ -47,7 +47,7 @@ Olumide Olayiwola   39722
 <img src="Login_page.jpg" alt="screenshot">
 
 ## Profile Page
-<img src="Register_page.png" alt="screenshot">
+<img src="Profile.jpg" alt="screenshot">
 
 
 ## Issues from Group Members
