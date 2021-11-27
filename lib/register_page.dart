@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:login_signup/profile.dart';
+import 'package:login_signup/utils/fire_auth.dart';
+import 'package:login_signup/utils/validator.dart';
 import 'package:login_signup/widgets/custom_checkbox.dart';
-import 'package:login_signup/widgets/primary_button.dart';
 import 'theme.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -19,9 +22,27 @@ class _RegisterPageState extends State<RegisterPage> {
     });
   }
 
+  final _registerFormKey = GlobalKey<FormState>();
+
+  final _nameTextController = TextEditingController();
+  final _emailTextController = TextEditingController();
+  final _passwordTextController = TextEditingController();
+
+  final _focusName = FocusNode();
+  final _focusEmail = FocusNode();
+  final _focusPassword = FocusNode();
+
+  bool _isProcessing = false;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GestureDetector(
+      onTap: () {
+        _focusName.unfocus();
+        _focusEmail.unfocus();
+        _focusPassword.unfocus();
+      },
+      child: Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
@@ -50,6 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 48,
               ),
               Form(
+                key: _registerFormKey,
                 child: Column(
                   children: [
                      Container(
@@ -58,6 +80,11 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(14.0),
                       ),
                       child: TextFormField(
+                         controller: _nameTextController,
+                        focusNode: _focusName,
+                        validator: (value) => Validator.validateName(
+                          name: value,
+                        ),
                         decoration: InputDecoration(
                           hintText: 'Username',
                           hintStyle: heading6.copyWith(color: textGrey),
@@ -76,6 +103,11 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(14.0),
                       ),
                       child: TextFormField(
+                        controller: _emailTextController,
+                        focusNode: _focusEmail,
+                        validator: (value) => Validator.validateEmail(
+                          email: value,
+                        ),
                         decoration: InputDecoration(
                           hintText: 'Email',
                           hintStyle: heading6.copyWith(color: textGrey),
@@ -94,7 +126,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(14.0),
                       ),
                       child: TextFormField(
+                        controller: _passwordTextController,
+                        focusNode: _focusPassword,
                         obscureText: !passwordVisible,
+                        validator: (value) => Validator.validatePassword(
+                          password: value,
+                        ),
                         decoration: InputDecoration(
                           hintText: 'Password',
                           hintStyle: heading6.copyWith(color: textGrey),
@@ -175,15 +212,53 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(
                 height: 32,
               ),
-              CustomPrimaryButton(
-                buttonColor: primaryBlue,
-                textValue: 'Register',
-                textColor: Colors.white,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Row(
+              SizedBox(height: 32.0),
+                      _isProcessing
+                          ? CircularProgressIndicator()
+                          : Row(
+                              children: [
+                                Expanded(
+                                  child: ElevatedButton(
+                                    onPressed: () async {
+                                      setState(() {
+                                        _isProcessing = true;
+                                      });
+
+                                      if (_registerFormKey.currentState!
+                                          .validate()) {
+                                        User? user = await FireAuth
+                                            .registerUsingEmailPassword(
+                                          name: _nameTextController.text,
+                                          email: _emailTextController.text,
+                                          password:
+                                              _passwordTextController.text,
+                                        );
+
+                                        setState(() {
+                                          _isProcessing = false;
+                                        });
+
+                                        if (user != null) {
+                                          Navigator.of(context)
+                                              .pushAndRemoveUntil(
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProfilePage(user: user),
+                                            ),
+                                            ModalRoute.withName('/'),
+                                          );
+                                        }
+                                      }
+                                    },
+                                    child: Text(
+                                      'Sign up',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                                          Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -202,8 +277,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ],
-              ),
-            ],
+
+                  ),
+                ],
+            ),
           ),
         ),
       ),

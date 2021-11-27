@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "872063599047",
+    "project_id": "sidehustle-login",
+    "storage_bucket": "sidehustle-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872063599047:android:dbdc2e8bd1bc372aebd9e2",
+        "android_client_info": {
+          "package_name": "com.example.login_signup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872063599047-5vj5j4auchkgot5hade1guaij0g8215v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDGGAFzx0sLw9XD21GVdsYSkd51Cgzg4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872063599047-5vj5j4auchkgot5hade1guaij0g8215v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
