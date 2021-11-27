@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:login_signup/login_page.dart';
+import 'package:login_signup/theme.dart';
 import 'package:login_signup/utils/fire_auth.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -31,16 +32,48 @@ class _ProfilePageState extends State<ProfilePage> {
         title: Text('Profile'),
       ),
       body: Center(
+        
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+                    height: 20,
+                  ),
+             Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                
+                children: [
+                  const Center(
+                    
+                    child: CircleAvatar(
+                      backgroundImage:
+                          AssetImage("assets/images/user.png"),
+                      radius: 40.0,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Image.asset(
+                    'assets/images/accent.png',
+                    width: 99,
+                    height: 4,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
             Text(
-              'NAME: ${_currentUser.displayName}',
-              style: Theme.of(context).textTheme.bodyText1,
+              'Welcome ${_currentUser.displayName}',
+              style: heading4,
             ),
             SizedBox(height: 16.0),
             Text(
-              'EMAIL: ${_currentUser.email}',
+              '${_currentUser.email}',
               style: Theme.of(context).textTheme.bodyText1,
             ),
             SizedBox(height: 16.0),
@@ -114,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.red,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(5),
                       ),
                     ),
                   ),

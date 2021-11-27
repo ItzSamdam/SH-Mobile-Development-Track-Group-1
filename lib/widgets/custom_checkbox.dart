@@ -30,7 +30,7 @@ class _CustomCheckboxState extends State<CustomCheckbox> {
         child: isChecked
             ? Icon(
                 Icons.check,
-                size: 20,
+                size: 18,
                 color: Colors.white,
               )
             : null,

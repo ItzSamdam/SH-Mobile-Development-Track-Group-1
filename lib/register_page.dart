@@ -46,29 +46,34 @@ class _RegisterPageState extends State<RegisterPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
+          padding: const EdgeInsets.fromLTRB(24.0, 25.0, 24.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [                  
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Center(
+                    child: CircleAvatar(
+                      backgroundImage:
+                          AssetImage("assets/images/group1.jpg"),
+                      radius: 20.0,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     'Register',
                     style: heading2.copyWith(color: textBlack),
                   ),
                   const SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset(
-                    'assets/images/accent.png',
-                    width: 99,
-                    height: 4,
-                  ),
+                    height: 5,
+                  ),                  
                 ],
               ),
               const SizedBox(
-                height: 48,
+                height: 10,
               ),
               Form(
                 key: _registerFormKey,
@@ -80,22 +85,22 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(14.0),
                       ),
                       child: TextFormField(
-                         controller: _nameTextController,
+                        controller: _nameTextController,
                         focusNode: _focusName,
                         validator: (value) => Validator.validateName(
                           name: value,
                         ),
                         decoration: InputDecoration(
-                          hintText: 'Username',
+                          hintText: 'Your Name',
                           hintStyle: heading6.copyWith(color: textGrey),
                           border: const OutlineInputBorder(
                             borderSide: BorderSide.none,
-                          ),
+                          ),   
                         ),
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 12,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -118,7 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 12,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -150,7 +155,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 12,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -185,40 +190,39 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(
-                height: 32,
+                height: 12,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomCheckbox(),
                   const SizedBox(
-                    width: 12,
+                    width: 8,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'By Creating an Account, you agree to our',
-                        style: regular16pt.copyWith(color: textGrey),
+                        style: regular12pt.copyWith(color: textGrey),
                       ),
                       Text(
                         'Terms & Conditions',
-                        style: regular16pt.copyWith(color: primaryBlue),
+                        style: regular12pt.copyWith(color: primaryBlue),
                       ),
                     ],
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 32,
-              ),
-              SizedBox(height: 32.0),
+              SizedBox(height: 20),
                       _isProcessing
                           ? CircularProgressIndicator()
                           : Row(
                               children: [
                                 Expanded(
                                   child: ElevatedButton(
+                                     style: ElevatedButton.styleFrom(
+                                                fixedSize: const Size(70, 50)),
                                     onPressed: () async {
                                       setState(() {
                                         _isProcessing = true;
@@ -258,25 +262,28 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ),
                               ],
                             ),
-                                          Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Already have an account? ",
-                    style: regular16pt.copyWith(color: textGrey),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(
-                        context,
-                      );
-                    },
-                    child: Text(
-                      'Login',
-                      style: regular16pt.copyWith(color: primaryBlue),
-                    ),
-                  ),
-                ],
+                           const SizedBox(
+                            height: 10,
+                          ), 
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Already have an account? ",
+                              style: regular14pt.copyWith(color: textGrey),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pop(
+                                  context,
+                                );
+                              },
+                              child: Text(
+                                'Login',
+                                style: regular16pt.copyWith(color: primaryBlue),
+                              ),
+                            ),
+                          ],
 
                   ),
                 ],

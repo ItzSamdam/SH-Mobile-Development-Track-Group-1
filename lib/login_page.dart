@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
             if (snapshot.connectionState == ConnectionState.done) {
         return SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(24.0, 40.0, 24.0, 0),
+          padding: const EdgeInsets.fromLTRB(24.0, 30.0, 24.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -81,11 +81,11 @@ class _LoginPageState extends State<LoginPage> {
                     child: CircleAvatar(
                       backgroundImage:
                           AssetImage("assets/images/group1.jpg"),
-                      radius: 60.0,
+                      radius: 40.0,
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Text(
                     'Login',
@@ -132,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 32,
+                      height: 22,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -168,35 +168,35 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(
-                height: 32,
+                height: 22,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomCheckbox(),
                   const SizedBox(
-                    width: 12,
+                    width: 10,
                   ),
-                  Text('Remember me', style: regular16pt),
+                  Text('Remember me', style: regular14pt),
                   const SizedBox(
-                    width: 60,
-                  ),
-                  const SizedBox(
-                    width: 60,
+                    width: 20,
                   ),
                   const SizedBox(
-                    width: 60,
+                    width: 10,
                   ),
-                  Text('Forgot Password?', style: regular16pt),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Text('Forgot Password?', style: regular14pt),
                 ],
                 // children: [
                   
                 // ],
               ),
               const SizedBox(
-                height: 32,
+                height: 22,
               ),
-              SizedBox(height: 24.0),
+              SizedBox(height: 20.0),
                           _isProcessing
                               ? CircularProgressIndicator()
                               : Row(
@@ -207,6 +207,9 @@ class _LoginPageState extends State<LoginPage> {
                                       child: 
                                       
                                       ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                                fixedSize: const Size(70, 50)),
+                                          
                                         onPressed: () async {
                                           _focusEmail.unfocus();
                                           _focusPassword.unfocus();
@@ -245,9 +248,11 @@ class _LoginPageState extends State<LoginPage> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 24.0),
+                                    SizedBox(width: 14.0),
                                     Expanded(
                                       child: ElevatedButton(
+                                         style: ElevatedButton.styleFrom(
+                                                fixedSize: const Size(70, 50)),
                                         onPressed: () {
                                           Navigator.of(context).push(
                                             MaterialPageRoute(
